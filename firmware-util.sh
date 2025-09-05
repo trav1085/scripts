@@ -48,11 +48,11 @@ if [ ! -d "$script_dir/.git" ]; then
     rm -rf firmware.sh >/dev/null 2>&1
     rm -rf functions.sh >/dev/null 2>&1
     rm -rf sources.sh >/dev/null 2>&1
-    $CURL -sLO ${script_url}firmware.sh
+    $CURL -sLO ${script_url}/refs/heads/main/firmware.sh
     rc0=$?
-    $CURL -sLO ${script_url}functions.sh
+    $CURL -sLO ${script_url}/refs/heads/main/functions.sh
     rc1=$?
-    $CURL -sLO ${script_url}sources.sh
+    $CURL -sLO ${script_url}/refs/heads/main/sources.sh
     rc2=$?
     if [[ $rc0 -ne 0 || $rc1 -ne 0 || $rc2 -ne 0 ]]; then
         echo -e "Error downloading one or more required files; cannot continue"
